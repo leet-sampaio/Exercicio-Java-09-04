@@ -20,7 +20,7 @@ public class Main {
 
             if (opcao == 1) {
                 for (int i = 0; i < jogadores.size(); ++i) {
-                    System.out.println("[" + (i + 1) + "] " + ((Jogador) jogadores.get(i)).getNome());
+                    System.out.println("[" + (i + 1) + "] " + jogadores.get(i).getNome());
                 }
 
                 System.out.print("Digite o número do jogador: ");
@@ -37,15 +37,18 @@ public class Main {
                     System.out.println("===============");
                 }
             } else if (opcao == 2) {
+                //imprime cada item do array usando Arraylist
                 for (int i = 0; i < jogadores.size(); ++i) {
-                    System.out.println("[" + (i + 1) + "] " + ((Jogador) jogadores.get(i)).getNome());
+                    System.out.println("[" + (i + 1) + "] " + jogadores.get(i).getNome());
                 }
                 System.out.print("Digite o número do jogador: ");
                 int idJogador = Integer.parseInt(sc.next()) - 1;
                 if (idJogador >= 0 && idJogador < jogadores.size()) {
                     System.out.print("Digite os pontos a adicionar: ");
                     int somaPontos = Integer.parseInt(sc.next());
-                    ((Jogador) jogadores.get(idJogador)).levelUp(somaPontos);
+                    jogadores.get(idJogador).levelUp(somaPontos);
+                }else{
+                    System.out.println("Jogador não encontrado!");
                 }
                 System.out.println("===============");
 
